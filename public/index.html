@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script src="https://getlaunchlist.com/js/widget.js" defer></script>
 <style>
   :root{
     --blue:#2D6FF0;
@@ -277,6 +278,10 @@
     position:absolute; right:-6px; top:50%; transform:translateY(-50%);
     width:248px; z-index:1; pointer-events:none;
   }
+  .launchlist-widget{
+    position:relative; z-index:2; width:100%; max-width:300px; min-height:126px;
+    margin-left:0; margin-right:auto;
+  }
   .cta-form{ position:relative; z-index:2; max-width:300px; margin-left:0; margin-right:auto; }
   .cta-form input{
     width:100%; border:1px solid #D6DBE4; border-radius:10px; padding:14px 16px;
@@ -454,8 +459,8 @@
       <nav class="nav">
         <a href="#features">機能</a>
         <a href="#howto">使い方</a>
-        <a href="https://getlaunchlist.com/pages/growfit">ウェイトリスト</a>
-        <a href="https://getlaunchlist.com/pages/growfit" class="btn-pill">ウェイトリスト登録</a>
+        <a href="#waitlist">ウェイトリスト</a>
+        <a href="#waitlist" class="btn-pill">ウェイトリスト登録</a>
       </nav>
     </div>
   </header>
@@ -470,7 +475,7 @@
         </p>
         <p class="hero-sub reveal" style="transition-delay:.55s">感覚ではなく、科学とデータで<br class="br-sp">筋肥大を管理。</p>
         <div class="hero-cta reveal" style="transition-delay:.8s">
-          <a href="https://getlaunchlist.com/pages/growfit" class="cta-btn">ウェイトリストに登録する</a>
+          <a href="#waitlist" class="cta-btn">ウェイトリストに登録する</a>
           <p class="cta-note">β版の先行案内を受け取る</p>
         </div>
 
@@ -815,10 +820,7 @@
         </div>
         <div class="cta-form-wrap">
           <img class="cta-form-deco" src="assets/cta_dumbbell_chart.png" alt="" aria-hidden="true">
-          <form class="cta-form" onsubmit="return false;">
-            <input type="email" placeholder="メールアドレスを入力" aria-label="メールアドレス">
-            <button type="submit">今すぐウェイトリストに登録</button>
-          </form>
+          <div class="launchlist-widget" data-key-id="7LCTuu"></div>
         </div>
       </div>
     </div>
