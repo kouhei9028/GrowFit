@@ -3,81 +3,207 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>GrowFit</title>
+    <title>GrowFit | 筋トレ記録を続けやすく</title>
     <meta
       name="description"
-      content="GrowFitは、筋トレの記録と継続をシンプルに支えるトレーニングアプリです。iOS版近日公開。"
+      content="GrowFitは、筋トレの記録、テンプレート、成長の振り返りをシンプルにまとめるトレーニングアプリです。iOS版近日公開。"
     />
-    <style>
-      :root {
-        color-scheme: light;
-        font-family:
-          "Inter", "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont,
-          "Segoe UI", sans-serif;
-        color: #17211b;
-        background: #f5f7f1;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
-        padding: 32px 20px;
-      }
-
-      main {
-        width: min(680px, 100%);
-      }
-
-      .badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 12px;
-        border: 1px solid #bfd4c5;
-        border-radius: 999px;
-        color: #315641;
-        background: #ffffff;
-        font-size: 14px;
-        font-weight: 700;
-      }
-
-      h1 {
-        margin: 28px 0 16px;
-        font-size: clamp(44px, 8vw, 82px);
-        line-height: 0.95;
-        letter-spacing: 0;
-      }
-
-      p {
-        margin: 0;
-        max-width: 580px;
-        color: #4c5d52;
-        font-size: 18px;
-        line-height: 1.8;
-      }
-
-      footer {
-        margin-top: 40px;
-        color: #667269;
-        font-size: 14px;
-      }
-    </style>
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="GrowFit home">
+        <span class="brand-mark">G</span>
+        <span>GrowFit</span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#features">機能</a>
+        <a href="#pricing">料金</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </header>
+
     <main>
-      <span class="badge">iOS版 近日公開</span>
-      <h1>GrowFit</h1>
-      <p>
-        筋トレの記録、テンプレート、成長の振り返りをひとつにまとめるアプリです。
-        正式なランディングページは現在準備中です。
-      </p>
-      <footer>© Kouhei Yano</footer>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">iOS版 近日公開</p>
+          <h1>筋トレの記録を、次の成長につなげる。</h1>
+          <p class="lead">
+            GrowFitは、日々のトレーニング、種目テンプレート、体重や記録の振り返りを
+            ひとつにまとめる筋トレアプリです。
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="mailto:kou.builds@gmail.com?subject=GrowFit%20release%20notice">
+              リリース通知を希望する
+            </a>
+            <a class="button secondary" href="#features">機能を見る</a>
+          </div>
+        </div>
+
+        <div class="phone-preview" aria-label="GrowFit app preview">
+          <div class="phone-frame">
+            <div class="phone-bar"></div>
+            <div class="app-screen">
+              <div class="screen-top">
+                <span>Today</span>
+                <strong>Push Day</strong>
+              </div>
+              <div class="metric-row">
+                <div>
+                  <span>Volume</span>
+                  <strong>12,450kg</strong>
+                </div>
+                <div>
+                  <span>Sets</span>
+                  <strong>18</strong>
+                </div>
+              </div>
+              <div class="workout-card">
+                <span>Bench Press</span>
+                <strong>80kg x 8</strong>
+                <div class="progress"><i style="width: 72%"></i></div>
+              </div>
+              <div class="workout-card">
+                <span>Incline DB Press</span>
+                <strong>24kg x 10</strong>
+                <div class="progress"><i style="width: 58%"></i></div>
+              </div>
+              <div class="chart">
+                <i style="height: 38%"></i>
+                <i style="height: 52%"></i>
+                <i style="height: 47%"></i>
+                <i style="height: 68%"></i>
+                <i style="height: 76%"></i>
+                <i style="height: 88%"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Features</p>
+          <h2>続けるために必要なものを、迷わず使える形に。</h2>
+        </div>
+        <div class="feature-grid">
+          <article>
+            <span class="icon">01</span>
+            <h3>トレーニング記録</h3>
+            <p>重量、回数、セット数、メモを素早く残せます。過去の記録も見返しやすく整理します。</p>
+          </article>
+          <article>
+            <span class="icon">02</span>
+            <h3>種目テンプレート</h3>
+            <p>よく使うメニューをテンプレート化して、毎回の入力を減らせます。</p>
+          </article>
+          <article>
+            <span class="icon">03</span>
+            <h3>成長の振り返り</h3>
+            <p>トレーニング量や自己ベストを見える化し、次に伸ばすポイントを把握できます。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section screenshots" aria-labelledby="screenshots-title">
+        <div class="section-heading">
+          <p class="eyebrow">Preview</p>
+          <h2 id="screenshots-title">アプリ画面イメージ</h2>
+        </div>
+        <div class="preview-grid">
+          <div class="preview-panel">
+            <span class="panel-label">記録</span>
+            <strong>今日の筋トレをすばやく入力</strong>
+            <div class="mini-list">
+              <span>スクワット 90kg x 8</span>
+              <span>レッグプレス 140kg x 10</span>
+              <span>カーフレイズ 45kg x 12</span>
+            </div>
+          </div>
+          <div class="preview-panel">
+            <span class="panel-label">分析</span>
+            <strong>ボリュームとPRを確認</strong>
+            <div class="mini-chart">
+              <i style="height: 36%"></i>
+              <i style="height: 48%"></i>
+              <i style="height: 62%"></i>
+              <i style="height: 55%"></i>
+              <i style="height: 82%"></i>
+            </div>
+          </div>
+          <div class="preview-panel">
+            <span class="panel-label">習慣</span>
+            <strong>予定と履歴をまとめて管理</strong>
+            <div class="week-row">
+              <span>月</span>
+              <span>火</span>
+              <span class="active">水</span>
+              <span>木</span>
+              <span>金</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" class="section split">
+        <div class="section-heading">
+          <p class="eyebrow">Plan</p>
+          <h2>まずは無料で。必要になったら買い切りで解放。</h2>
+        </div>
+        <div class="pricing-grid">
+          <article class="plan">
+            <h3>Free</h3>
+            <p class="price">0円</p>
+            <ul>
+              <li>基本的な筋トレ記録</li>
+              <li>履歴の確認</li>
+              <li>基本テンプレート</li>
+            </ul>
+          </article>
+          <article class="plan featured">
+            <h3>Premium</h3>
+            <p class="price">買い切り 1,200円</p>
+            <ul>
+              <li>Premium機能を永続解放</li>
+              <li>テンプレート作成の拡張</li>
+              <li>振り返り機能の拡張</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="faq" class="section faq">
+        <div class="section-heading">
+          <p class="eyebrow">FAQ</p>
+          <h2>よくある質問</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>いつ公開されますか？</summary>
+            <p>現在iOS版を準備中です。公開後、このページでApp Storeリンクを案内します。</p>
+          </details>
+          <details>
+            <summary>Premiumはサブスクリプションですか？</summary>
+            <p>いいえ。Premiumは買い切り 1,200円の予定です。</p>
+          </details>
+          <details>
+            <summary>Android版はありますか？</summary>
+            <p>iOS版の公開後に、Android版も後追いで準備する予定です。</p>
+          </details>
+        </div>
+      </section>
     </main>
+
+    <footer class="footer">
+      <div>
+        <strong>GrowFit</strong>
+        <span>© Kouhei Yano</span>
+      </div>
+      <nav aria-label="Footer navigation">
+        <a href="/privacy/">プライバシーポリシー</a>
+        <a href="/terms/">利用規約</a>
+        <a href="mailto:kou.builds@gmail.com">お問い合わせ</a>
+      </nav>
+    </footer>
   </body>
 </html>
