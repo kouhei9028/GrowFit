@@ -52,6 +52,7 @@
     line-height:1.6;
   }
   a{ text-decoration:none; color:inherit; }
+  .br-sp{ display:none; }   /* スマホ専用の改行 */
   img{ max-width:100%; }
   .wrap{ max-width:1120px; margin:0 auto; padding-left:28px; padding-right:28px; }
 
@@ -81,7 +82,7 @@
     padding-top:54px; padding-bottom:64px; position:relative;
   }
   .hero-copy{ position:relative; z-index:3; }
-  .hero h1{ font-size:50px; font-weight:900; line-height:1.18; letter-spacing:.5px; margin-bottom:24px; }
+  .hero h1{ font-size:50px; font-weight:900; line-height:1.3; letter-spacing:.5px; margin-bottom:24px; }
   .hero h1 .accent{ color:var(--blue); }
   .hero-lead{ font-size:20px; line-height:2; color:var(--muted); margin-bottom:18px; max-width:430px; }
   .hero-sub{ font-size:23px; font-weight:700; color:var(--blue); margin-bottom:56px; }
@@ -344,58 +345,95 @@
   /* ---------- スマホ（375px〜767px） ---------- */
   @media screen and (max-width:767px){
     .wrap{ padding-left:20px; padding-right:20px; }
-    .nav{ gap:14px; }
-    .nav a:not(.btn-pill){ display:none; }
+    /* ヘッダー横のボタンを含めナビを非表示 */
+    .nav a{ display:none; }
 
-    .hero .wrap{ grid-template-columns:1fr; gap:20px; }
-    .hero-visual{ height:480px; }
+    /* ヒーロー：スマホ画面を最上部に、文字は中央寄せ */
+    .hero .wrap{ grid-template-columns:1fr; gap:22px; }
+    .hero-visual{ order:-1; height:520px; }
+    .hero-phone{ width:248px; height:502px; transform:translateX(-50%); }
     .hero-deco{ display:none; }
-    .hero h1{ font-size:32px; }
+    .hero-copy{ text-align:center; }
+    .br-sp{ display:inline; }   /* スマホ専用改行を有効化 */
+    .sp-hide{ display:none; }   /* スマホでは非表示（句点など） */
+    .hero h1{ font-size:37px; line-height:1.55; }
     .hero-lead{ font-size:16px; line-height:1.9; max-width:none; }
-    .hero-sub{ font-size:19px; margin-bottom:36px; }
+    .hero-sub{ font-size:20px; margin-bottom:32px; }
     .cta-btn{ font-size:17px; padding:16px 28px; }
     .cta-note{ max-width:430px; }
     .mini-trio{ gap:10px; max-width:none; }
     .mini-card{ padding:14px 8px; }
     .mini-card p{ font-size:12px; }
-    .hero-phone{ width:248px; height:502px; }
+
+    /* ヒーローのフェードイン順：スマホ画面→見出し→説明→タグライン→ボタン→カード */
+    .hero-visual{ transition-delay:.05s !important; }
+    .hero h1{ transition-delay:.2s !important; }
+    .hero-lead{ transition-delay:.35s !important; }
+    .hero-sub{ transition-delay:.5s !important; }
+    .hero-cta{ transition-delay:.65s !important; }
+    .mini-trio .mini-card:nth-child(1){ transition-delay:.8s !important; }
+    .mini-trio .mini-card:nth-child(2){ transition-delay:.92s !important; }
+    .mini-trio .mini-card:nth-child(3){ transition-delay:1.04s !important; }
 
     .section-title{ font-size:30px; }
+    .solution{ padding-top:32px; padding-bottom:34px; }
     .solution .lead{ font-size:23px; line-height:1.8; }
-    .solution .punch{ font-size:27px; margin-top:48px; }
+    /* 「自動集計。」の後だけ改行、他は自然な折り返し */
+    .solution .lead br:nth-of-type(1),
+    .solution .lead br:nth-of-type(3){ display:none; }
+    .solution .punch{ font-size:30px; margin-top:40px; }
 
     .features .wrap{ max-width:none; }
     .features-grid{ grid-template-columns:1fr; }
     .feature-card{ padding:22px; }
+    .feature-head h3{ font-size:19px; }
     .feature-body{ justify-content:center; }
     .feature-text{ flex-basis:100%; }
     .feature-body.reverse .feature-phone{ order:0; }
     .feature-body.reverse .feature-text{ order:0; }
 
-    .problem{ padding-bottom:90px; }
+    /* 「こんな悩み」：上下余白を縮小、画像幅を統一して文字位置を揃える */
+    .problem{ padding-top:28px; padding-bottom:48px; }
     .problem-grid{ grid-template-columns:1fr; }
+    .problem-card p{ font-size:16px; line-height:1.6; }
     .problem-card:nth-child(1) p{ width:auto; }
+    .problem-card:nth-child(1) img,
+    .problem-card:nth-child(2) img,
+    .problem-card:nth-child(3) img{ width:116px; height:auto; }
 
-    .howto{ padding-bottom:96px; }
+    .howto{ padding-top:36px; padding-bottom:56px; }
     .howto-grid{ grid-template-columns:1fr; }
     .step-card{ height:auto; }
+    .step-head h3{ font-size:19px; }
+    .howto-grid .step-card:nth-child(2) .step-figure img{ height:200px; }  /* 自動集計アイコンを拡大 */
 
-    .plans-sub{ margin-bottom:36px; }
-
-    .rehab-box{ padding:28px 22px; }
-    .rehab-intro{ gap:18px; }
-    .rehab-title-row h2{ font-size:24px; }
+    /* リハビリ師カードの崩れ・はみ出し修正 */
+    .rehab-box{ padding:40px 20px 26px; }   /* イラスト上に余白 */
+    .rehab-intro{ gap:26px; justify-content:center; }   /* イラストと見出しの間に余白 */
+    .rehab-figures{ justify-content:center; }
+    .rehab-figures .avatar{ width:92px; }
+    .rehab-figures .skeleton{ width:42px; }
+    .rehab-figures .muscle{ width:38px; }
+    .rehab-title-row{ gap:10px; justify-content:center; }
+    .rehab-title-row h2{ font-size:20px; }
+    .rehab-badge{ margin-top:6px; margin-bottom:8px; }   /* バッジ上下に余白 */
+    .rehab-headline{ min-width:0; flex-basis:100%; }   /* 1行使い切り、説明文の左右余白を項目説明と揃える */
+    .rehab-lead br{ display:none; }
     .rehab-items{ grid-template-columns:1fr; gap:22px; }
 
-    .plans-sub{ font-size:15px; }
+    .plans-sub{ font-size:15px; margin-bottom:36px; }
     .plan-cards{ grid-template-columns:1fr; }
+    .plan-list li{ font-size:14px; line-height:1.5; }
     .plan-table th, .plan-table td{ padding:11px 10px; font-size:12.5px; }
     .plan-table th.free, .plan-table th.premium{ font-size:13px; }
     .plan-note{ align-items:flex-start; text-align:left; }
 
-    .cta-box{ grid-template-columns:1fr; padding:30px 22px; }
+    /* CTAカード：上余白を縮小し、内容を中央寄せに */
+    .final-cta{ padding-top:24px; }
+    .cta-box{ grid-template-columns:1fr; padding:30px 22px; text-align:center; }
     .cta-box h2{ font-size:26px; }
-    .cta-form{ margin-left:0; }
+    .cta-box h2 br, .cta-box .desc br{ display:none; }
+    .cta-form{ margin-left:auto; margin-right:auto; }
     .cta-form-deco{ display:none; }
     .cta-form-wrap{ display:flex; justify-content:center; }
 
@@ -426,11 +464,11 @@
   <section class="hero">
     <div class="wrap">
       <div class="hero-copy">
-        <h1 class="reveal" style="transition-delay:.05s">鍛えた部位が、<br><span class="accent">数字</span>で見える。</h1>
+        <h1 class="reveal" style="transition-delay:.05s">鍛えた部位が<br><span class="accent">数字</span>で見える<span class="sp-hide">。</span></h1>
         <p class="hero-lead reveal" style="transition-delay:.3s">
           GrowFitは、各筋肉ごとのトータルボリュームをホーム画面から一覧で可視化。さらに、初期設定で入力した体重や各種目の1RMをもとに、筋肥大に関する文献の科学的なメタ分析を参考に、筋肥大に効果的な目標トータルボリュームを自動で算出・表示します。
         </p>
-        <p class="hero-sub reveal" style="transition-delay:.55s">感覚ではなく、科学とデータで筋肥大を管理。</p>
+        <p class="hero-sub reveal" style="transition-delay:.55s">感覚ではなく、科学とデータで<br class="br-sp">筋肥大を管理。</p>
         <div class="hero-cta reveal" style="transition-delay:.8s">
           <a href="#waitlist" class="cta-btn">ウェイトリストに登録する</a>
           <p class="cta-note">β版の先行案内を受け取る</p>
@@ -472,7 +510,7 @@
   <!-- ============ PROBLEM ============ -->
   <section class="problem">
     <div class="wrap">
-      <h2 class="section-title reveal">こんな悩み、ありませんか？</h2>
+      <h2 class="section-title reveal">こんなお悩み、<br class="br-sp">ありませんか？</h2>
       <div class="problem-grid">
         <div class="problem-card reveal">
           <img src="assets/worry_question_man.png" alt="悩むユーザー">
@@ -493,13 +531,8 @@
   <!-- ============ SOLUTION INTRO ============ -->
   <section class="solution">
     <div class="wrap">
-      <p class="lead reveal">
-        GrowFitなら、種目を記録するだけで<br>
-        部位別トータルボリュームを自動集計。<br>
-        科学的な目標値と比較しながら、<br>
-        筋肥大のための最適な負荷管理ができる。
-      </p>
-      <p class="punch reveal">感覚ではなく、科学と数字で鍛える。</p>
+      <p class="lead reveal">GrowFitなら、種目を記録するだけで<br>部位別トータルボリュームを自動集計。<br>科学的な目標値と比較しながら、<br>筋肥大のための最適な負荷管理ができる。</p>
+      <p class="punch reveal">感覚ではなく、<br class="br-sp">科学と数字で鍛える。</p>
     </div>
   </section>
 
@@ -640,7 +673,7 @@
           </div>
           <div class="rehab-headline">
             <div class="rehab-title-row">
-              <h2>現役リハビリ師が作成・監修</h2>
+              <h2>現役リハビリ師が開発・監修</h2>
               <span class="rehab-badge">医学 × 科学 × 筋肥大</span>
             </div>
             <p class="rehab-lead">リハビリ現場で培った運動学の知見と、最新の筋肥大研究に基づいて設計。<br>科学的に根拠のあるトレーニングを、シンプルに続けられる形にしました。</p>
@@ -800,13 +833,15 @@
           <span>GrowFit</span>
         </div>
         <nav class="footer-nav">
+          <a href="#">&#29305;&#23450;&#21830;&#21462;&#24341;&#27861;&#12395;&#22522;&#12389;&#12367;&#34920;&#35352;</a>
           <a href="/privacy/">&#12503;&#12521;&#12452;&#12496;&#12471;&#12540;&#12509;&#12522;&#12471;&#12540;</a>
           <a href="/terms/">&#21033;&#29992;&#35215;&#32004;</a>
-          <a href="mailto:kou.builds@gmail.com">&#12362;&#21839;&#12356;&#21512;&#12431;&#12379;</a>
+          <a href="#">&#26009;&#37329;&#12539;&#35506;&#37329;&#26465;&#20214;</a>
+          <a href="#">&#20813;&#36012;&#12539;&#27880;&#24847;&#20107;&#38917;</a>
         </nav>
       </div>
       <div class="footer-bottom">
-        <span>&copy; Kouhei Yano</span>
+        <span>© GrowFit</span>
       </div>
     </div>
   </footer>
