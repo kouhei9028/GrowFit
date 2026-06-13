@@ -389,9 +389,11 @@
     .hero-sub{ font-size:20px; margin-bottom:32px; }
     .cta-btn{ font-size:17px; padding:16px 28px; }
     .cta-note{ max-width:430px; }
-    .mini-trio{ gap:10px; max-width:none; }
-    .mini-card{ padding:14px 8px; }
-    .mini-card p{ font-size:12px; }
+    .mini-trio{ gap:8px; max-width:none; }
+    .mini-card{ min-height:132px; padding:13px 6px; }
+    .mini-icon{ width:34px; height:34px; margin-bottom:8px; }
+    .mini-card p{ font-size:11px; line-height:1.45; letter-spacing:-.01em; word-break:keep-all; overflow-wrap:normal; }
+    .mini-card p br{ display:none; }
 
     /* ヒーローのフェードイン順：スマホ画面→見出し→説明→タグライン→ボタン→カード */
     .hero-visual{ transition-delay:.05s !important; }
@@ -423,17 +425,22 @@
     /* 「こんな悩み」：上下余白を縮小、画像幅を統一して文字位置を揃える */
     .problem{ padding-top:28px; padding-bottom:48px; }
     .problem-grid{ grid-template-columns:1fr; }
+    .problem-card{ min-height:142px; }
     .problem-card p{ font-size:16px; line-height:1.6; }
     .problem-card:nth-child(1) p{ width:auto; }
     .problem-card:nth-child(1) img,
     .problem-card:nth-child(2) img,
-    .problem-card:nth-child(3) img{ width:116px; height:auto; }
+    .problem-card:nth-child(3) img{ width:116px; height:128px; object-fit:contain; }
 
     .howto{ padding-top:36px; padding-bottom:56px; }
     .howto-grid{ grid-template-columns:1fr; }
     .step-card{ height:auto; }
-    .step-head h3{ font-size:19px; }
-    .howto-grid .step-card:nth-child(2) .step-figure img{ height:200px; }  /* 自動集計アイコンを拡大 */
+    .step-head{ align-items:flex-start; gap:10px; }
+    .step-head .num-badge{ flex:0 0 30px; }
+    .step-head h3{ font-size:19px; line-height:1.45; word-break:keep-all; overflow-wrap:normal; }
+    .step-figure{ justify-content:center; }
+    .howto-grid .step-card:nth-child(1) .step-figure img{ display:block; margin-left:auto; margin-right:auto; }
+    .howto-grid .step-card:nth-child(2) .step-figure img{ height:200px; }  /* enlarge auto summary icon */
 
     /* リハビリ師カードの崩れ・はみ出し修正 */
     .rehab-box{ padding:40px 20px 26px; }   /* イラスト上に余白 */
@@ -453,7 +460,8 @@
     .plan-cards{ grid-template-columns:1fr; }
     .plan-list li{ font-size:14px; line-height:1.5; }
     .plan-table th, .plan-table td{ padding:11px 10px; font-size:12.5px; }
-    .plan-table th.free, .plan-table th.premium{ font-size:13px; }
+    .plan-table th.free, .plan-table th.premium{ font-size:13px; line-height:1.35; }
+    .plan-table th.free span, .plan-table th.premium span{ display:block; }
     .plan-note{ align-items:flex-start; text-align:left; }
 
     /* CTAカード：上余白を縮小し、内容を中央寄せに */
@@ -791,8 +799,8 @@
           <thead>
             <tr>
               <th class="label"></th>
-              <th class="free">Freeプラン</th>
-              <th class="premium">Premiumプラン</th>
+              <th class="free"><span>Free</span><span>&#12503;&#12521;&#12531;</span></th>
+              <th class="premium"><span>Premium</span><span>&#12503;&#12521;&#12531;</span></th>
             </tr>
           </thead>
           <tbody>
