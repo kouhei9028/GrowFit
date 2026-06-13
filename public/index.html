@@ -38,6 +38,9 @@
   .features-grid .reveal:nth-child(2){ transition-delay:.13s; }
   .features-grid .reveal:nth-child(3){ transition-delay:.26s; }
   .features-grid .reveal:nth-child(4){ transition-delay:.39s; }
+  .features-grid .reveal:nth-child(5){ transition-delay:.13s; }
+  .features-grid .reveal:nth-child(6){ transition-delay:.26s; }
+  .difference-board.reveal{ transition-delay:.08s; }
   .howto-grid .reveal:nth-child(1){ transition-delay:0s; }
   .howto-grid .reveal:nth-child(2){ transition-delay:.13s; }
   .howto-grid .reveal:nth-child(3){ transition-delay:.26s; }
@@ -151,11 +154,58 @@
   /* ---------- SOLUTION INTRO ---------- */
   .solution{ padding-top:48px; padding-bottom:56px; text-align:center; }
   .solution .lead{ font-size:35px; font-weight:900; line-height:1.85; color:var(--ink); }
-  .solution .punch{ font-size:45px; font-weight:900; color:var(--blue); margin-top:76px; }
+  .solution .punch{ font-size:45px; font-weight:900; color:var(--blue); margin-top:60px; }
+
+  /* ---------- DIFFERENCE ---------- */
+  .difference{ padding-top:32px; padding-bottom:76px; background:#fff; }
+  .difference .wrap{ max-width:1300px; }
+  .difference .section-title{ margin-bottom:14px; }
+  .difference-sub,
+  .features-sub,
+  .howto-sub{
+    text-align:center; font-size:17px; line-height:1.8; color:var(--muted); margin:0 auto 60px;
+  }
+  .difference-sub{ max-width:760px; }
+  .difference-board{
+    max-width:1244px; margin:0 auto; padding:0;
+    display:grid; grid-template-columns:1fr 52px 1fr; gap:18px; align-items:center;
+  }
+  .compare-panel{
+    border:1px solid #DCE3EE; border-radius:8px; overflow:hidden; background:#fff;
+    box-shadow:0 2px 8px rgba(20,30,50,.03);
+  }
+  .compare-panel__head{
+    min-height:48px; display:flex; align-items:center; justify-content:center;
+    color:#fff; font-size:25px; font-weight:900; line-height:1.25; padding:8px 16px;
+  }
+  .compare-panel--normal .compare-panel__head{ background:linear-gradient(180deg,#7E8A99,#65717F); }
+  .compare-panel--growfit .compare-panel__head{ background:linear-gradient(180deg,#1276FF,#0062E8); }
+  .compare-list{ list-style:none; display:grid; gap:13px; padding:20px 28px 22px; }
+  .compare-list li{
+    display:flex; align-items:flex-start; gap:12px; color:var(--ink-2);
+    font-size:20px; font-weight:700; line-height:1.55;
+  }
+  .compare-icon{
+    flex:0 0 22px; width:22px; height:22px; border-radius:50%;
+    display:inline-flex; align-items:center; justify-content:center;
+    color:#fff; font-size:14px; font-weight:900; line-height:1; margin-top:1px;
+  }
+  .compare-icon--bad{ background:#6D7A89; }
+  .compare-icon--good{ background:#0D72F2; }
+  .compare-arrow{
+    width:0; height:0; justify-self:center;
+    border-top:18px solid transparent; border-bottom:18px solid transparent;
+    border-left:22px solid #7D8EA4; filter:drop-shadow(0 2px 3px rgba(20,30,50,.12));
+  }
 
   /* ---------- FEATURES ---------- */
   .features{ padding-top:56px; padding-bottom:72px; }
+  #features,
+  #howto,
+  #waitlist{ scroll-margin-top:96px; }
   .features .wrap{ max-width:1300px; }
+  .features .section-title{ margin-bottom:14px; }
+  .features-sub{ max-width:740px; }
   .features-grid{ display:grid; grid-template-columns:1fr 1fr; gap:24px; }
   .feature-card{
     border:1px solid var(--line); border-radius:16px; padding:26px;
@@ -183,7 +233,8 @@
 
   /* ---------- HOW TO ---------- */
   .howto{ padding-top:64px; padding-bottom:160px; }
-  .howto .section-title{ margin-bottom:40px; }
+  .howto .section-title{ margin-bottom:14px; }
+  .howto-sub{ max-width:700px; }
   .howto-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
   .step-card{
     border:1px solid var(--line); border-radius:14px; padding:24px; height:298px;
@@ -355,6 +406,12 @@
     .solution .lead{ font-size:30px; }
     .solution .punch{ font-size:38px; }
 
+    .difference-board{ grid-template-columns:1fr; gap:16px; max-width:640px; }
+    .compare-arrow{
+      transform:rotate(90deg); border-top-width:16px; border-bottom-width:16px;
+      border-left-width:20px;
+    }
+
     .features .wrap{ max-width:none; }
     .features-grid{ grid-template-columns:1fr; }
 
@@ -409,7 +466,25 @@
     /* 「自動集計。」の後だけ改行、他は自然な折り返し */
     .solution .lead br:nth-of-type(1),
     .solution .lead br:nth-of-type(3){ display:none; }
-    .solution .punch{ font-size:30px; margin-top:40px; }
+    .solution .punch{ font-size:30px; margin-top:60px; }
+
+    .difference{ padding-top:24px; padding-bottom:48px; }
+    .difference .section-title{ font-size:24px; line-height:1.55; margin-bottom:14px; }
+    .difference-sub,
+    .features-sub,
+    .howto-sub{ font-size:15px; line-height:1.8; margin-bottom:36px; }
+    .difference-sub br,
+    .features-sub br,
+    .howto-sub br{ display:none; }
+    .difference-board{ grid-template-columns:1fr; gap:14px; padding:0; }
+    .compare-panel__head{ min-height:48px; font-size:25px; line-height:1.18; padding:8px 10px; }
+    .compare-list{ gap:11px; padding:16px 16px 18px; }
+    .compare-list li{ font-size:18px; line-height:1.5; gap:9px; }
+    .compare-icon{ flex-basis:19px; width:19px; height:19px; font-size:12px; }
+    .compare-arrow{
+      transform:rotate(90deg); border-top-width:14px; border-bottom-width:14px;
+      border-left-width:18px;
+    }
 
     .features .wrap{ max-width:none; }
     .features-grid{ grid-template-columns:1fr; }
@@ -488,7 +563,7 @@
       <nav class="nav">
         <a href="#features">機能</a>
         <a href="#howto">使い方</a>
-        <a href="#hero" class="btn-pill">ウェイトリスト登録</a>
+        <a href="#waitlist" class="btn-pill">ウェイトリスト登録</a>
       </nav>
     </div>
   </header>
@@ -574,9 +649,43 @@
     </div>
   </section>
 
+  <!-- ============ DIFFERENCE ============ -->
+  <section class="difference">
+    <div class="wrap">
+      <h2 class="section-title reveal">一般的な筋トレ記録アプリとの違い</h2>
+      <p class="difference-sub reveal">記録するだけで終わらせず、部位別の負荷・目標達成率・次に鍛えるべき部位まで<br>見える化します。</p>
+      <div class="difference-board reveal" aria-label="一般的な筋トレ記録アプリとGrowFitの違い">
+        <div class="compare-panel compare-panel--normal">
+          <div class="compare-panel__head">一般的な記録アプリ</div>
+          <ul class="compare-list">
+            <li><span class="compare-icon compare-icon--bad">×</span>重量・回数を記録するだけ</li>
+            <li><span class="compare-icon compare-icon--bad">×</span>成長の判断が感覚的</li>
+            <li><span class="compare-icon compare-icon--bad">×</span>不足部位が分かりにくい</li>
+            <li><span class="compare-icon compare-icon--bad">×</span>記録が面倒で続きにくい</li>
+          </ul>
+        </div>
+
+        <div class="compare-arrow" aria-hidden="true"></div>
+
+        <div class="compare-panel compare-panel--growfit">
+          <div class="compare-panel__head">GrowFit</div>
+          <ul class="compare-list">
+            <li><span class="compare-icon compare-icon--good">✓</span>部位別トータルボリュームを自動集計</li>
+            <li><span class="compare-icon compare-icon--good">✓</span>目標ボリュームと達成率を確認</li>
+            <li><span class="compare-icon compare-icon--good">✓</span>次に鍛えるべき部位が分かる</li>
+            <li><span class="compare-icon compare-icon--good">✓</span>テンプレ・前回記録ですぐ開始</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ FEATURES ============ -->
   <section id="features" class="features">
     <div class="wrap">
+      <h2 class="section-title reveal">『GrowFit』の特徴</h2>
+      <p class="features-sub reveal">トレーニングの記録を、ただの履歴ではなく「成長の判断材料」に変えるための<br>機能をまとめました。</p>
+
       <div class="features-grid">
 
         <!-- Card 1 -->
@@ -662,6 +771,48 @@
           </div>
         </div>
 
+        <!-- Card 5 -->
+        <div class="feature-card reveal">
+          <div class="feature-head">
+            <span class="num-badge">5</span>
+            <h3>レポートで長期的な成長を分析</h3>
+          </div>
+          <div class="feature-body">
+            <div class="feature-phone">
+              <div class="phone-screen"><img src="assets/app_template_screenshot.png" alt="レポート画面（仮）"></div>
+            </div>
+            <div class="feature-text">
+              <p>過去のトレーニング履歴や部位別の進捗を、レポートとして振り返れます。短期的な達成だけでなく、長期的に伸びている部位・停滞している部位を確認できます。</p>
+              <ul class="feature-list">
+                <li><span class="dot">・</span>部位別の進捗をレポート化</li>
+                <li><span class="dot">・</span>過去の記録を長期的に振り返り</li>
+                <li><span class="dot">・</span>改善すべきトレーニング傾向を把握</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="feature-card reveal">
+          <div class="feature-head">
+            <span class="num-badge">6</span>
+            <h3>体重・プロテインもまとめて管理</h3>
+          </div>
+          <div class="feature-body reverse">
+            <div class="feature-phone">
+              <div class="phone-screen"><img src="assets/app_protein_record_screenshot.jpg" alt="プロテイン摂取記録画面"></div>
+            </div>
+            <div class="feature-text">
+              <p>筋トレ記録だけでなく、体重の変化やプロテイン摂取も同じ流れで管理。トレーニング・栄養・体の変化をまとめて見直せるので、習慣化しやすくなります。</p>
+              <ul class="feature-list">
+                <li><span class="dot">・</span>体重の推移を記録</li>
+                <li><span class="dot">・</span>プロテイン摂取状況をチェック</li>
+                <li><span class="dot">・</span>筋トレ以外の成長要素も一元管理</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -670,6 +821,7 @@
   <section id="howto" class="howto">
     <div class="wrap">
       <h2 class="section-title reveal">使い方はシンプル</h2>
+      <p class="howto-sub reveal">いつものトレーニングを記録するだけで、部位別ボリュームと目標への進捗を<br>自動で整理します。</p>
       <div class="howto-grid">
         <div class="step-card reveal">
           <div class="step-head">
