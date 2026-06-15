@@ -432,8 +432,12 @@
   /* ---------- スマホ（375px〜767px） ---------- */
   @media screen and (max-width:767px){
     .wrap{ padding-left:20px; padding-right:20px; }
-    /* ヘッダー横のボタンを含めナビを非表示 */
+    /* ヘッダーは通常リンクを隠し、CTAだけ表示 */
     .nav a{ display:none; }
+    .nav .btn-pill{
+      display:flex; align-items:center; justify-content:center;
+      font-size:12px; padding:9px 12px; border-radius:8px; white-space:nowrap;
+    }
 
     /* ヒーロー：スマホ画面を最上部に、文字は中央寄せ */
     .hero .wrap{ grid-template-columns:1fr; gap:22px; }
@@ -565,7 +569,7 @@
       <nav class="nav">
         <a href="#features">機能</a>
         <a href="#howto">使い方</a>
-        <a href="#hero" class="btn-pill">ウェイトリスト登録</a>
+        <a href="#hero-waitlist" class="btn-pill">ウェイトリスト登録</a>
       </nav>
     </div>
   </header>
