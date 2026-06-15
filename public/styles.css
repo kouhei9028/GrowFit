@@ -244,6 +244,19 @@ a {
   color: #ffffff;
 }
 
+.footer-nav .footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #303846;
+  border-radius: 999px;
+  padding: 6px 12px;
+}
+
+.footer-nav .footer-social-link:hover {
+  border-color: #5f6c80;
+}
+
 .footer-bottom {
   display: flex;
   align-items: center;
