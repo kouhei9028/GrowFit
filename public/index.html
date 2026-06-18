@@ -278,11 +278,11 @@
     display:flex; gap:28px; padding-right:28px; flex:0 0 auto;
   }
   .screen-shot{
-    flex:0 0 auto; width:clamp(190px,18vw,255px); margin:0;
+    flex:0 0 auto; width:auto; height:clamp(410px,43vw,560px); margin:0;
     border-radius:34px; filter:drop-shadow(0 22px 32px rgba(14,18,24,.22));
   }
   .screen-shot img{
-    display:block; width:100%; height:auto; border-radius:34px;
+    display:block; width:auto; height:100%; border-radius:34px;
   }
   @keyframes screen-flow-marquee{
     from{ transform:translateX(0); }
@@ -573,7 +573,7 @@
     .screen-flow-title{ font-size:24px; line-height:1.55; margin-bottom:22px; padding:0 20px; }
     .screen-marquee{ padding:4px 0 18px; }
     .screen-set{ gap:18px; padding-right:18px; }
-    .screen-shot{ width:190px; border-radius:28px; filter:drop-shadow(0 16px 24px rgba(14,18,24,.22)); }
+    .screen-shot{ width:auto; height:390px; border-radius:28px; filter:drop-shadow(0 16px 24px rgba(14,18,24,.22)); }
     .screen-shot img{ border-radius:28px; }
     .screen-track{ animation-duration:30s; }
 
@@ -930,18 +930,20 @@
     <div class="screen-marquee reveal">
       <div class="screen-track">
         <div class="screen-set">
-          <figure class="screen-shot"><img src="assets/app_flow_01.jpg" alt="プロテイン摂取を記録する画面"></figure>
-          <figure class="screen-shot"><img src="assets/app_flow_02.jpg" alt="トレーニング履歴画面"></figure>
-          <figure class="screen-shot"><img src="assets/app_flow_03.jpg" alt="ホーム画面のボリュームとカレンダー"></figure>
-          <figure class="screen-shot"><img src="assets/app_flow_04.jpg" alt="Premium購入画面"></figure>
-          <figure class="screen-shot"><img src="assets/app_flow_05.jpg" alt="体重記録画面"></figure>
+          <figure class="screen-shot"><img src="assets/app_slide_home.jpg" alt="ホーム画面"></figure>
+          <figure class="screen-shot"><img src="assets/app_slide_training.jpg" alt="筋トレ記録画面"></figure>
+          <figure class="screen-shot"><img src="assets/app_slide_template.jpg" alt="テンプレート作成画面"></figure>
+          <figure class="screen-shot"><img src="assets/app_slide_weight.jpg" alt="体重記録画面"></figure>
+          <figure class="screen-shot"><img src="assets/app_slide_history.jpg" alt="履歴画面"></figure>
+          <figure class="screen-shot"><img src="assets/app_slide_report.jpg" alt="レポート画面"></figure>
         </div>
         <div class="screen-set" aria-hidden="true">
-          <figure class="screen-shot"><img src="assets/app_flow_01.jpg" alt=""></figure>
-          <figure class="screen-shot"><img src="assets/app_flow_02.jpg" alt=""></figure>
-          <figure class="screen-shot"><img src="assets/app_flow_03.jpg" alt=""></figure>
-          <figure class="screen-shot"><img src="assets/app_flow_04.jpg" alt=""></figure>
-          <figure class="screen-shot"><img src="assets/app_flow_05.jpg" alt=""></figure>
+          <figure class="screen-shot"><img src="assets/app_slide_home.jpg" alt=""></figure>
+          <figure class="screen-shot"><img src="assets/app_slide_training.jpg" alt=""></figure>
+          <figure class="screen-shot"><img src="assets/app_slide_template.jpg" alt=""></figure>
+          <figure class="screen-shot"><img src="assets/app_slide_weight.jpg" alt=""></figure>
+          <figure class="screen-shot"><img src="assets/app_slide_history.jpg" alt=""></figure>
+          <figure class="screen-shot"><img src="assets/app_slide_report.jpg" alt=""></figure>
         </div>
       </div>
     </div>
