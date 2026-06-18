@@ -257,29 +257,29 @@
     position:relative; overflow:hidden; padding:22px 0 118px;
     background:#fff;
   }
-  .screen-flow .wrap{ max-width:1180px; }
+  .screen-flow .wrap{ max-width:1180px; background:#fff; }
   .screen-flow-kicker{
     text-align:center; color:var(--blue); font-size:14px; font-weight:900; letter-spacing:.08em;
     margin-bottom:8px;
   }
   .screen-flow-title{
     text-align:center; font-size:34px; line-height:1.5; font-weight:900; color:var(--ink);
-    margin-bottom:34px;
+    margin-bottom:52px;
   }
   .screen-marquee{
-    width:100%; overflow:hidden; padding:10px 0 26px;
+    width:100%; overflow:hidden; padding:10px 0 26px; background:#fff;
     -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 9%,#000 91%,transparent 100%);
     mask-image:linear-gradient(90deg,transparent 0%,#000 9%,#000 91%,transparent 100%);
   }
   .screen-track{
-    display:flex; width:max-content; animation:screen-flow-marquee 64s linear infinite;
+    display:flex; width:max-content; animation:screen-flow-marquee 64s linear infinite; background:#fff;
   }
   .screen-set{
-    display:flex; gap:28px; padding-right:28px; flex:0 0 auto;
+    display:flex; gap:28px; padding-right:28px; flex:0 0 auto; background:#fff;
   }
   .screen-shot{
     flex:0 0 auto; width:auto; height:clamp(410px,43vw,560px); margin:0;
-    border-radius:34px; filter:drop-shadow(0 22px 32px rgba(14,18,24,.22));
+    border-radius:34px;
   }
   .screen-shot img{
     display:block; width:auto; height:100%; border-radius:34px;
@@ -570,10 +570,10 @@
 
     .screen-flow{ padding:8px 0 62px; }
     .screen-flow-kicker{ font-size:12px; margin-bottom:6px; }
-    .screen-flow-title{ font-size:24px; line-height:1.55; margin-bottom:22px; padding:0 20px; }
+    .screen-flow-title{ font-size:24px; line-height:1.55; margin-bottom:34px; padding:0 20px; }
     .screen-marquee{ padding:4px 0 18px; }
     .screen-set{ gap:18px; padding-right:18px; }
-    .screen-shot{ width:auto; height:390px; border-radius:28px; filter:drop-shadow(0 16px 24px rgba(14,18,24,.22)); }
+    .screen-shot{ width:auto; height:390px; border-radius:28px; }
     .screen-shot img{ border-radius:28px; }
     .screen-track{ animation-duration:48s; }
 
