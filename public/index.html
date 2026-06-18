@@ -491,6 +491,7 @@
       display:flex; align-items:center; justify-content:center;
       font-size:12px; padding:9px 12px; border-radius:8px; white-space:nowrap;
     }
+    #hero-waitlist{ scroll-margin-top:42vh; }
 
     /* ヒーロー：スマホ画面を最上部に、文字は中央寄せ */
     .hero .wrap{ grid-template-columns:1fr; gap:22px; }
@@ -651,7 +652,7 @@
         <div id="hero-waitlist" class="hero-cta reveal" style="transition-delay:.8s">
           <div class="hero-widget">
             <form class="launchlist-form hero-waitlist-form" action="https://getlaunchlist.com/s/7LCTuu" method="POST">
-              <input name="email" type="email" placeholder="Enter your email" aria-label="Email" required>
+              <input id="hero-waitlist-email" name="email" type="email" placeholder="Enter your email" aria-label="Email" required>
               <button type="submit">&#12454;&#12455;&#12452;&#12488;&#12522;&#12473;&#12488;&#12395;&#30331;&#37682;&#12377;&#12427;</button>
             </form>
           </div>
@@ -1173,6 +1174,25 @@
         });
       }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
       els.forEach(function (el) { io.observe(el); });
+    })();
+
+    (function () {
+      var emailInput = document.getElementById('hero-waitlist-email');
+      if (!emailInput) return;
+
+      var links = document.querySelectorAll('a[href="#hero-waitlist"]');
+      links.forEach(function (link) {
+        link.addEventListener('click', function (event) {
+          if (!window.matchMedia('(max-width: 767px)').matches) return;
+
+          event.preventDefault();
+          emailInput.scrollIntoView({
+            behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+            block: 'center'
+          });
+          history.replaceState(null, '', '#hero-waitlist');
+        });
+      });
     })();
   </script>
 </body>
