@@ -233,7 +233,7 @@
   .feature-list li .dot{ color:var(--blue); }
 
   /* ---------- HOW TO ---------- */
-  .howto{ padding-top:64px; padding-bottom:160px; }
+  .howto{ padding-top:64px; padding-bottom:72px; }
   .howto .section-title{ margin-bottom:14px; }
   .howto-sub{ max-width:700px; }
   .howto-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
@@ -251,6 +251,47 @@
   .step-figure img{ height:150px; object-fit:contain; }
   .howto-grid .step-card:nth-child(1) .step-figure img{ transform:translateX(10px); }
   .step-card p{ font-size:15px; line-height:1.85; color:var(--muted); }
+
+  /* ---------- APP SCREEN FLOW ---------- */
+  .screen-flow{
+    position:relative; overflow:hidden; padding:22px 0 118px;
+    background:linear-gradient(180deg,#fff 0%,#F4F8FF 46%,#fff 100%);
+  }
+  .screen-flow .wrap{ max-width:1180px; }
+  .screen-flow-kicker{
+    text-align:center; color:var(--blue); font-size:14px; font-weight:900; letter-spacing:.08em;
+    margin-bottom:8px;
+  }
+  .screen-flow-title{
+    text-align:center; font-size:34px; line-height:1.5; font-weight:900; color:var(--ink);
+    margin-bottom:34px;
+  }
+  .screen-marquee{
+    width:100%; overflow:hidden; padding:10px 0 26px;
+    -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 9%,#000 91%,transparent 100%);
+    mask-image:linear-gradient(90deg,transparent 0%,#000 9%,#000 91%,transparent 100%);
+  }
+  .screen-track{
+    display:flex; width:max-content; animation:screen-flow-marquee 40s linear infinite;
+  }
+  .screen-set{
+    display:flex; gap:28px; padding-right:28px; flex:0 0 auto;
+  }
+  .screen-shot{
+    flex:0 0 auto; width:clamp(190px,18vw,255px); margin:0;
+    border-radius:34px; filter:drop-shadow(0 22px 32px rgba(14,18,24,.22));
+  }
+  .screen-shot img{
+    display:block; width:100%; height:auto; border-radius:34px;
+  }
+  @keyframes screen-flow-marquee{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .screen-track{ animation:none; }
+    .screen-marquee{ overflow-x:auto; }
+  }
 
   /* ---------- REHAB PROFESSIONAL ---------- */
   .rehab{ padding-top:8px; padding-bottom:72px; }
@@ -526,6 +567,15 @@
     .step-figure{ justify-content:center; }
     .howto-grid .step-card:nth-child(1) .step-figure img{ display:block; margin-left:auto; margin-right:auto; }
     .howto-grid .step-card:nth-child(2) .step-figure img{ height:200px; }  /* enlarge auto summary icon */
+
+    .screen-flow{ padding:8px 0 62px; }
+    .screen-flow-kicker{ font-size:12px; margin-bottom:6px; }
+    .screen-flow-title{ font-size:24px; line-height:1.55; margin-bottom:22px; padding:0 20px; }
+    .screen-marquee{ padding:4px 0 18px; }
+    .screen-set{ gap:18px; padding-right:18px; }
+    .screen-shot{ width:190px; border-radius:28px; filter:drop-shadow(0 16px 24px rgba(14,18,24,.22)); }
+    .screen-shot img{ border-radius:28px; }
+    .screen-track{ animation-duration:30s; }
 
     /* リハビリ師カードの崩れ・はみ出し修正 */
     .rehab-box{ padding:40px 20px 26px; }   /* イラスト上に余白 */
@@ -866,6 +916,32 @@
           </div>
           <div class="step-figure"><img src="assets/step_muscles.png" alt="部位アイコン"></div>
           <p>不足部位や目標未達の部位がひと目で分かり、トレーニングの質が上がる。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ APP SCREEN FLOW ============ -->
+  <section class="screen-flow" aria-label="GrowFitの実際のアプリ画面">
+    <div class="wrap">
+      <p class="screen-flow-kicker reveal">APP SCREENS</p>
+      <h2 class="screen-flow-title reveal">記録・振り返り・Premiumまで、<br class="br-sp">実際の画面で確認。</h2>
+    </div>
+    <div class="screen-marquee reveal">
+      <div class="screen-track">
+        <div class="screen-set">
+          <figure class="screen-shot"><img src="assets/app_flow_01.jpg" alt="プロテイン摂取を記録する画面"></figure>
+          <figure class="screen-shot"><img src="assets/app_flow_02.jpg" alt="トレーニング履歴画面"></figure>
+          <figure class="screen-shot"><img src="assets/app_flow_03.jpg" alt="ホーム画面のボリュームとカレンダー"></figure>
+          <figure class="screen-shot"><img src="assets/app_flow_04.jpg" alt="Premium購入画面"></figure>
+          <figure class="screen-shot"><img src="assets/app_flow_05.jpg" alt="体重記録画面"></figure>
+        </div>
+        <div class="screen-set" aria-hidden="true">
+          <figure class="screen-shot"><img src="assets/app_flow_01.jpg" alt=""></figure>
+          <figure class="screen-shot"><img src="assets/app_flow_02.jpg" alt=""></figure>
+          <figure class="screen-shot"><img src="assets/app_flow_03.jpg" alt=""></figure>
+          <figure class="screen-shot"><img src="assets/app_flow_04.jpg" alt=""></figure>
+          <figure class="screen-shot"><img src="assets/app_flow_05.jpg" alt=""></figure>
         </div>
       </div>
     </div>
