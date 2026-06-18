@@ -137,6 +137,10 @@
 
   /* ---------- PROBLEM ---------- */
   .section-title{ text-align:center; font-size:50px; font-weight:900; }
+  .section-kicker{
+    text-align:center; color:var(--blue); font-size:14px; font-weight:900; letter-spacing:.08em;
+    margin-bottom:8px;
+  }
   .problem{ padding-top:64px; padding-bottom:70px; }
   .problem .section-title{ margin-bottom:34px; }
   .problem-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
@@ -264,7 +268,7 @@
   }
   .screen-flow-title{
     text-align:center; font-size:34px; line-height:1.5; font-weight:900; color:var(--ink);
-    margin-bottom:52px;
+    margin-bottom:72px;
   }
   .screen-marquee{
     width:100%; overflow:hidden; padding:10px 0 26px; background:#fff;
@@ -305,6 +309,7 @@
   .rehab-figures .skeleton{ width:52px; height:auto; display:block; opacity:.92; }
   .rehab-figures .muscle{ width:46px; height:auto; display:block; opacity:.92; }
   .rehab-headline{ flex:1; min-width:320px; }
+  .rehab-headline .section-kicker{ text-align:left; }
   .rehab-title-row{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-bottom:14px; }
   .rehab-title-row h2{ font-size:34px; font-weight:900; color:var(--ink); line-height:1.3; }
   .rehab-badge{
@@ -367,6 +372,7 @@
     box-shadow:0 4px 20px rgba(20,30,50,.06); position:relative; overflow:hidden;
   }
   .cta-box h2{ font-size:33px; font-weight:900; line-height:1.4; margin-bottom:18px; }
+  .cta-box .section-kicker{ text-align:left; }
   .cta-box .desc{ font-size:14px; line-height:1.9; color:var(--muted); }
   .cta-form-wrap{ position:relative; }
   .cta-form-deco{
@@ -569,8 +575,9 @@
     .howto-grid .step-card:nth-child(2) .step-figure img{ height:200px; }  /* enlarge auto summary icon */
 
     .screen-flow{ padding:8px 0 62px; }
+    .section-kicker,
     .screen-flow-kicker{ font-size:12px; margin-bottom:6px; }
-    .screen-flow-title{ font-size:24px; line-height:1.55; margin-bottom:34px; padding:0 20px; }
+    .screen-flow-title{ font-size:24px; line-height:1.55; margin-bottom:48px; padding:0 20px; }
     .screen-marquee{ padding:4px 0 18px; }
     .screen-set{ gap:18px; padding-right:18px; }
     .screen-shot{ width:auto; height:390px; border-radius:28px; }
@@ -585,6 +592,7 @@
     .rehab-figures .skeleton{ width:42px; }
     .rehab-figures .muscle{ width:38px; }
     .rehab-title-row{ gap:10px; justify-content:center; }
+    .rehab-headline .section-kicker{ text-align:center; }
     .rehab-title-row h2{ font-size:20px; }
     .rehab-badge{ margin-top:6px; margin-bottom:8px; }   /* バッジ上下に余白 */
     .rehab-headline{ min-width:0; flex-basis:100%; }   /* 1行使い切り、説明文の左右余白を項目説明と揃える */
@@ -601,6 +609,7 @@
 
     /* CTAカード：上余白を縮小し、内容を中央寄せに */
     .final-cta{ padding-top:24px; }
+    .cta-box .section-kicker{ text-align:center; }
     .cta-box{ grid-template-columns:1fr; padding:30px 22px; text-align:center; }
     .cta-box h2{ font-size:26px; }
     .cta-box h2 br, .cta-box .desc br{ display:none; }
@@ -685,6 +694,7 @@
   <!-- ============ PROBLEM ============ -->
   <section class="problem">
     <div class="wrap">
+      <p class="section-kicker reveal">PROBLEMS</p>
       <h2 class="section-title reveal">こんなお悩み、<br class="br-sp">ありませんか？</h2>
       <div class="problem-grid">
         <div class="problem-card reveal">
@@ -714,6 +724,7 @@
   <!-- ============ DIFFERENCE ============ -->
   <section class="difference">
     <div class="wrap">
+      <p class="section-kicker reveal">DIFFERENCE</p>
       <h2 class="section-title reveal">一般的な<br>筋トレ記録アプリとの違い</h2>
       <p class="difference-sub reveal">記録するだけで終わらせず、部位別の負荷・目標達成率・次に鍛えるべき部位まで<br>見える化します。</p>
       <div class="difference-board reveal" aria-label="一般的な筋トレ記録アプリとGrowFitの違い">
@@ -753,6 +764,7 @@
   <!-- ============ FEATURES ============ -->
   <section id="features" class="features">
     <div class="wrap">
+      <p class="section-kicker reveal">FEATURES</p>
       <h2 class="section-title reveal">『GrowFit』の特徴</h2>
       <p class="features-sub reveal">トレーニングの記録を、ただの履歴ではなく「成長の判断材料」に変えるための<br>機能をまとめました。</p>
 
@@ -890,6 +902,7 @@
   <!-- ============ HOW TO ============ -->
   <section id="howto" class="howto">
     <div class="wrap">
+      <p class="section-kicker reveal">HOW TO</p>
       <h2 class="section-title reveal">使い方はシンプル</h2>
       <p class="howto-sub reveal">いつものトレーニングを記録するだけで、部位別ボリュームと目標への進捗を<br>自動で整理します。</p>
       <div class="howto-grid">
@@ -925,7 +938,7 @@
   <section class="screen-flow" aria-label="GrowFitの実際のアプリ画面">
     <div class="wrap">
       <p class="screen-flow-kicker reveal">APP SCREENS</p>
-      <h2 class="screen-flow-title reveal">記録・振り返り・Premiumまで、<br class="br-sp">実際の画面で確認。</h2>
+      <h2 class="screen-flow-title reveal">実際のアプリ画面</h2>
     </div>
     <div class="screen-marquee reveal">
       <div class="screen-track">
@@ -970,6 +983,7 @@
             <img class="muscle" src="assets/rehab_muscle.png" alt="筋肉イラスト">
           </div>
           <div class="rehab-headline">
+            <p class="section-kicker">SUPERVISION</p>
             <div class="rehab-title-row">
               <h2>現役リハビリ師が開発・監修</h2>
               <span class="rehab-badge">医学 × 科学 × 筋肥大</span>
@@ -1010,6 +1024,7 @@
   <!-- ============ FREE vs PREMIUM ============ -->
   <section class="plans">
     <div class="wrap">
+      <p class="section-kicker reveal">PLANS</p>
       <h2 class="section-title reveal">プランの違い</h2>
       <p class="plans-sub reveal">まずは無料で始めて、必要になったらPremiumへ。目的に合わせて選べます。</p>
 
@@ -1108,6 +1123,7 @@
     <div class="wrap">
       <div class="cta-box reveal">
         <div>
+          <p class="section-kicker">WAITLIST</p>
           <h2>先行公開の案内を<br>受け取りませんか？</h2>
           <p class="desc">ウェイトリスト登録で、リリース情報・<br>β版案内・最新アップデートをお届けします。</p>
         </div>
