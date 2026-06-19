@@ -103,6 +103,9 @@
     font-size:12px; line-height:1; font-weight:900; letter-spacing:.04em;
   }
   .hero-offer-title{ font-size:17px; line-height:1.45; font-weight:900; color:var(--ink); }
+  .hero-offer-title .discount{
+    display:block; color:var(--blue); font-size:28px; line-height:1.12; margin-top:2px;
+  }
   .hero-offer-price{ text-align:right; white-space:nowrap; }
   .hero-offer-price .before{
     display:block; color:#7B8491; font-size:12px; font-weight:700; text-decoration:line-through;
@@ -528,6 +531,7 @@
     .hero-offer-price{ text-align:left; display:flex; align-items:flex-end; gap:10px; }
     .hero-offer-price .before{ margin-bottom:2px; }
     .hero-offer-price .after{ font-size:28px; }
+    .hero-offer-title .discount{ font-size:30px; }
     .cta-btn{ font-size:17px; padding:16px 28px; }
     .cta-note{ max-width:430px; }
     .mini-trio{ gap:10px; max-width:none; }
@@ -676,7 +680,7 @@
         <div class="hero-offer reveal" style="transition-delay:.7s" aria-label="先着30名限定のPremium割引特典">
           <div>
             <span class="hero-offer-label">先着30名様限定</span>
-            <p class="hero-offer-title">プレミアムプランをリリース記念で50%OFF</p>
+            <p class="hero-offer-title">プレミアムプランリリース記念<span class="discount">50%OFF</span></p>
           </div>
           <div class="hero-offer-price">
             <span class="before">通常 1,200円</span>
