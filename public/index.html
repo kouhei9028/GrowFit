@@ -90,7 +90,27 @@
   .hero h1{ font-size:50px; font-weight:900; line-height:1.3; letter-spacing:.5px; margin-bottom:24px; }
   .hero h1 .accent{ color:var(--blue); }
   .hero-lead{ font-size:20px; line-height:2; color:var(--muted); margin-bottom:18px; max-width:430px; }
-  .hero-sub{ font-size:23px; font-weight:700; color:var(--blue); margin-bottom:56px; }
+  .hero-sub{ font-size:23px; font-weight:700; color:var(--blue); margin-bottom:22px; }
+  .hero-offer{
+    max-width:430px; margin-bottom:24px; padding:14px 16px;
+    border:1px solid #BFD4FB; border-radius:12px; background:#F5F9FF;
+    display:grid; grid-template-columns:1fr auto; gap:12px; align-items:center;
+    box-shadow:0 4px 14px rgba(37,99,235,.09);
+  }
+  .hero-offer-label{
+    display:inline-flex; width:max-content; margin-bottom:6px; padding:4px 9px;
+    border-radius:999px; background:#EAF2FF; color:var(--blue);
+    font-size:12px; line-height:1; font-weight:900; letter-spacing:.04em;
+  }
+  .hero-offer-title{ font-size:17px; line-height:1.45; font-weight:900; color:var(--ink); }
+  .hero-offer-price{ text-align:right; white-space:nowrap; }
+  .hero-offer-price .before{
+    display:block; color:#7B8491; font-size:12px; font-weight:700; text-decoration:line-through;
+  }
+  .hero-offer-price .after{ display:block; color:var(--blue); font-size:26px; line-height:1.1; font-weight:900; }
+  .hero-offer-note{
+    grid-column:1 / -1; color:var(--muted); font-size:13px; line-height:1.55; margin-top:-2px;
+  }
   .cta-btn{
     display:flex; align-items:center; justify-content:center;
     width:100%; max-width:430px;
@@ -503,7 +523,11 @@
     .sp-hide{ display:none; }   /* スマホでは非表示（句点など） */
     .hero h1{ font-size:37px; line-height:1.55; }
     .hero-lead{ font-size:16px; line-height:1.9; max-width:none; }
-    .hero-sub{ font-size:20px; margin-bottom:32px; }
+    .hero-sub{ font-size:20px; margin-bottom:18px; }
+    .hero-offer{ grid-template-columns:1fr; gap:8px; text-align:left; margin-left:auto; margin-right:auto; margin-bottom:22px; }
+    .hero-offer-price{ text-align:left; display:flex; align-items:flex-end; gap:10px; }
+    .hero-offer-price .before{ margin-bottom:2px; }
+    .hero-offer-price .after{ font-size:28px; }
     .cta-btn{ font-size:17px; padding:16px 28px; }
     .cta-note{ max-width:430px; }
     .mini-trio{ gap:10px; max-width:none; }
@@ -649,7 +673,18 @@
           GrowFitは、各筋肉ごとのトータルボリュームをホーム画面から一覧で可視化。さらに、初期設定で入力した体重や各種目の1RMをもとに、筋肥大に関する文献の科学的なメタ分析を参考に、筋肥大に効果的な目標トータルボリュームを自動で算出・表示します。
         </p>
         <p class="hero-sub reveal" style="transition-delay:.55s">感覚ではなく、科学とデータで<br class="br-sp">筋肥大を管理。</p>
-        <div id="hero-waitlist" class="hero-cta reveal" style="transition-delay:.8s">
+        <div class="hero-offer reveal" style="transition-delay:.7s" aria-label="先着30名限定のPremium割引特典">
+          <div>
+            <span class="hero-offer-label">先着30名様限定</span>
+            <p class="hero-offer-title">プレミアムプランをリリース記念で50%OFF</p>
+          </div>
+          <div class="hero-offer-price">
+            <span class="before">通常 1,200円</span>
+            <span class="after">600円</span>
+          </div>
+          <p class="hero-offer-note">ウェイトリスト登録者へ、リリース時に先着特典の案内をお送りします。</p>
+        </div>
+        <div id="hero-waitlist" class="hero-cta reveal" style="transition-delay:.9s">
           <div class="hero-widget">
             <form class="launchlist-form hero-waitlist-form" action="https://getlaunchlist.com/s/7LCTuu" method="POST">
               <input id="hero-waitlist-email" name="email" type="email" placeholder="Enter your email" aria-label="Email" required>
@@ -660,19 +695,19 @@
         </div>
 
         <div class="mini-trio">
-          <div class="mini-card reveal" style="transition-delay:1.05s">
+          <div class="mini-card reveal" style="transition-delay:1.1s">
             <div class="mini-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2D6FF0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="20" x2="6" y2="13"></line><line x1="12" y1="20" x2="12" y2="8"></line><line x1="18" y1="20" x2="18" y2="4"></line></svg>
             </div>
             <p>部位別<br>総ボリューム<br>可視化</p>
           </div>
-          <div class="mini-card reveal" style="transition-delay:1.2s">
+          <div class="mini-card reveal" style="transition-delay:1.25s">
             <div class="mini-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2D6FF0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"></path><path d="M10 3v6.5L5 18a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 18l-5-8.5V3"></path><line x1="8" y1="14" x2="16" y2="14"></line></svg>
             </div>
             <p>科学的に<br>目標ボリューム算出</p>
           </div>
-          <div class="mini-card reveal" style="transition-delay:1.35s">
+          <div class="mini-card reveal" style="transition-delay:1.4s">
             <div class="mini-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="#2D6FF0" stroke="#2D6FF0" stroke-width="1.5" stroke-linejoin="round"><polygon points="13 2 4 14 11 14 10 22 20 9 13 9 13 2"></polygon></svg>
             </div>
